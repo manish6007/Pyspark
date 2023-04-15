@@ -1,0 +1,3 @@
+Slowly Changing Dimensions (SCDs) are a concept used in data warehousing to maintain historical data over time, while tracking changes in data. SCDs are important for analysis and reporting purposes, and there are different types of SCDs to choose from depending on the specific requirements of the data warehouse. By utilizing SCDs, organizations can gain valuable insights into their data and make informed decisions based on its historical context. For a comprehensive explanation on Slowly Changing Dimension type 2 and its implementation on databricks, please refer to below resource.
+
+https://medium.com/@manishshrivastava26/mastering-dimensional-data-with-delta-lake-implementing-scd2-on-databricks-4d56a6f636b5
