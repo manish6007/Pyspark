@@ -1,3 +1,16 @@
+metadata = [
+    {'name': 'name', 'description': 'The name of the person', 'datatype': 'string'},
+    {'name': 'score', 'description': 'A double precision number', 'datatype': 'double'},
+    {'name': 'identifier', 'description': 'A unique long identifier', 'datatype': 'long'},
+    {'name': 'is_active', 'description': 'Boolean indicating if the person is active', 'datatype': 'boolean'},
+    {'name': 'age', 'description': 'The age of the person', 'datatype': 'integer'},
+    {'name': 'birth_date', 'description': 'The birth date of the person', 'datatype': 'date'},
+    {'name': 'last_login', 'description': 'The timestamp of the last login', 'datatype': 'timestamp'},
+    {'name': 'balance', 'description': 'Account balance with two decimal precision', 'datatype': 'decimal(10, 2)'}
+]
+
+
+
 name|score|identifier|is_active|age|birth_date|last_login|balance
 John Doe|3.14|1234567890123|true|30|1993-04-01|2023-03-06T14:22:00Z|12345.67
 Jane Smith|2.71|1234567890124|false|25|1998-05-02|2023-03-06T15:33:00Z|23456.78
