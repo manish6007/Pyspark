@@ -1,13 +1,21 @@
-for item in data:
-    for key in item:
-        if item[key] == "long":
-            item[key] = "bigint"
+string|double|long|boolean|integer|date|timestamp
+Sample1|1.1|10000000001|True|1|2023-01-01|2023-01-01 10:00:00
+Sample2|2.2|10000000002|False|2|2023-01-02|2023-01-02 10:00:00
+Sample3|3.3|10000000003|True|3|2023-01-03|2023-01-03 10:00:00
+Sample4|4.4|10000000004|False|4|2023-01-04|2023-01-04 10:00:00
+Sample5|5.5|10000000005|True|5|2023-01-05|2023-01-05 10:00:00
+Sample6|6.6|10000000006|False|6|2023-01-06|2023-01-06 10:00:00
+Sample7|7.7|10000000007|True|7|2023-01-07|2023-01-07 10:00:00
+Sample8|8.8|10000000008|False|8|2023-01-08|2023-01-08 10:00:00
+Sample9|9.9|10000000009|True|9|2023-01-09|2023-01-09 10:00:00
+Sample10|10.1|10000000010|False|10|2023-01-10|2023-01-10 10:00:00
 
-data = [
-    {'type': 'long', 'name': 'id'},
-    {'type': 'string', 'name': 'name'},
-    {'type': 'long', 'name': 'timestamp'}
+metadata = [
+    {'name': 'string', 'description': '', 'datatype': 'string'},
+    {'name': 'double', 'description': '', 'datatype': 'double'},
+    {'name': 'long', 'description': '', 'datatype': 'long'},
+    {'name': 'boolean', 'description': '', 'datatype': 'boolean'},
+    {'name': 'integer', 'description': '', 'datatype': 'integer'},
+    {'name': 'date', 'description': '', 'datatype': 'date'},
+    {'name': 'timestamp', 'description': '', 'datatype': 'timestamp'}
 ]
-
-# Using list comprehension to update the dictionaries
-updated_data = [{k: (v.replace("long", "bigint") if v == "long" else v) for k, v in item.items()} for item in data]
