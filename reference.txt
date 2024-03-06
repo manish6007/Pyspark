@@ -1,21 +1,12 @@
-string|double|long|boolean|integer|date|timestamp
-Sample1|1.1|10000000001|True|1|2023-01-01|2023-01-01 10:00:00
-Sample2|2.2|10000000002|False|2|2023-01-02|2023-01-02 10:00:00
-Sample3|3.3|10000000003|True|3|2023-01-03|2023-01-03 10:00:00
-Sample4|4.4|10000000004|False|4|2023-01-04|2023-01-04 10:00:00
-Sample5|5.5|10000000005|True|5|2023-01-05|2023-01-05 10:00:00
-Sample6|6.6|10000000006|False|6|2023-01-06|2023-01-06 10:00:00
-Sample7|7.7|10000000007|True|7|2023-01-07|2023-01-07 10:00:00
-Sample8|8.8|10000000008|False|8|2023-01-08|2023-01-08 10:00:00
-Sample9|9.9|10000000009|True|9|2023-01-09|2023-01-09 10:00:00
-Sample10|10.1|10000000010|False|10|2023-01-10|2023-01-10 10:00:00
+name|score|identifier|is_active|age|birth_date|last_login|balance
+John Doe|3.14|1234567890123|true|30|1993-04-01|2023-03-06T14:22:00Z|12345.67
+Jane Smith|2.71|1234567890124|false|25|1998-05-02|2023-03-06T15:33:00Z|23456.78
+Michael Brown|1.62|1234567890125|true|28|1995-06-03|2023-03-06T16:44:00Z|34567.89
+Emily White|3.58|1234567890126|false|32|1991-07-04|2023-03-06T17:55:00Z|45678.90
+Daniel Harris|2.46|1234567890127|true|29|1994-08-05|2023-03-06T18:06:00Z|56789.01
+Laura Green|2.89|1234567890128|false|26|1997-09-06|2023-03-06T19:17:00Z|67890.12
+Joshua King|3.77|1234567890129|true|31|1992-10-07|2023-03-06T20:28:00Z|78901.23
+Sophia Hall|1.33|1234567890130|false|27|1996-11-08|2023-03-06T21:39:00Z|89012.34
+Benjamin Lee|2.95|1234567890131|true|33|1990-12-09|2023-03-06T22:50:00Z|90123.45
+Olivia Young|3.67|1234567890132|false|24|1999-01-10|2023-03-06T23:01:00Z|1234.56
 
-metadata = [
-    {'name': 'string', 'description': '', 'datatype': 'string'},
-    {'name': 'double', 'description': '', 'datatype': 'double'},
-    {'name': 'long', 'description': '', 'datatype': 'long'},
-    {'name': 'boolean', 'description': '', 'datatype': 'boolean'},
-    {'name': 'integer', 'description': '', 'datatype': 'integer'},
-    {'name': 'date', 'description': '', 'datatype': 'date'},
-    {'name': 'timestamp', 'description': '', 'datatype': 'timestamp'}
-]
