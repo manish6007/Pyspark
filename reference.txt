@@ -1,0 +1,13 @@
+for item in data:
+    for key in item:
+        if item[key] == "long":
+            item[key] = "bigint"
+
+data = [
+    {'type': 'long', 'name': 'id'},
+    {'type': 'string', 'name': 'name'},
+    {'type': 'long', 'name': 'timestamp'}
+]
+
+# Using list comprehension to update the dictionaries
+updated_data = [{k: (v.replace("long", "bigint") if v == "long" else v) for k, v in item.items()} for item in data]
