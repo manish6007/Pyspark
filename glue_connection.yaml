@@ -1,0 +1,39 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: AWS CloudFormation template to create a Glue Connection for Redshift using Secrets Manager with dynamic parameters for networking.
+
+Parameters:
+  MySecret:
+    Type: String
+    Description: The name or ARN of the secret in Secrets Manager that contains the JDBC connection information.
+  AvailabilityZone:
+    Type: String
+    Description: The Availability Zone to use for the Glue Connection.
+  SubnetId:
+    Type: String
+    Description: The Subnet ID to use for the Glue Connection.
+  SecurityGroupId:
+    Type: String
+    Description: The Security Group ID to use for the Glue Connection.
+
+Resources:
+  GlueConnection:
+    Type: AWS::Glue::Connection
+    Properties:
+      CatalogId: !Ref AWS::AccountId
+      ConnectionInput:
+        ConnectionType: "JDBC"
+        ConnectionProperties:
+          "JDBC_CONNECTION_URL": !Sub '{{resolve:secretsmanager:${MySecret}:SecretString:jdbcUrl}}'
+          "PASSWORD": !Sub '{{resolve:secretsmanager:${MySecret}:SecretString:password}}'
+          "USERNAME": !Sub '{{resolve:secretsmanager:${MySecret}:SecretString:username}}'
+        PhysicalConnectionRequirements:
+          AvailabilityZone: !Ref AvailabilityZone
+          SecurityGroupIdList: 
+            - !Ref SecurityGroupId
+          SubnetId: !Ref SubnetId
+      Description: "Glue connection for Redshift"
+
+Outputs:
+  ConnectionName:
+    Description: "Name of the Glue Connection"
+    Value: !Ref GlueConnection
