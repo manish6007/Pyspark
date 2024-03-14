@@ -1,0 +1,22 @@
+{
+    "JobName": "your-job-name",
+    "Role": "your-iam-role",
+    "ExecutionProperty": {
+        "MaxConcurrentRuns": 1
+    },
+    "Command": {
+        "Name": "glueetl",
+        "ScriptLocation": "s3://path-to-your-script",
+        "PythonVersion": "3"
+    },
+    "DefaultArguments": {
+        "--TempDir": "s3://path-to-temp-dir",
+        "--connections": "name_of_your_new_connection",
+        "--extra-jars": "s3://path-to-extra-jars",
+        "--class": "YourClassName"
+    },
+    "MaxRetries": 0,
+    "Timeout": 60,
+    "MaxCapacity": 10.0,
+    "GlueVersion": "2.0"
+}
