@@ -1,0 +1,35 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowSpecificRoleAccess",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalArn": [
+            "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/RoleName1",
+            "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/RoleName2"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "DenyAllOtherAccess",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": "*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:PrincipalArn": [
+            "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/RoleName1",
+            "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/RoleName2"
+          ]
+        }
+      }
+    }
+  ]
+}
