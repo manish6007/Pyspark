@@ -1,3 +1,7 @@
+aws glue update-job --job-name "YourJobName" --cli-input-json file://path_to_your_json_file.json
+
+
+
 {
     "JobName": "your-job-name",
     "Role": "your-iam-role",
