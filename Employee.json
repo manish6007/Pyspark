@@ -1,0 +1,24 @@
+[
+  {
+    "employee_id": "E001",
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "department": "Finance",
+    "salary": 70000,
+    "projects": [
+      {"project_id": "P001", "project_name": "Project Finance Analysis"},
+      {"project_id": "P002", "project_name": "Annual Budget Planning"}
+    ]
+  },
+  {
+    "employee_id": "E002",
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "department": "IT",
+    "salary": 85000,
+    "projects": [
+      {"project_id": "P003", "project_name": "Cloud Infrastructure Upgrade"},
+      {"project_id": "P004", "project_name": "Security Compliance Audit"}
+    ]
+  }
+]
