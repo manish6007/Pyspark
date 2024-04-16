@@ -1,0 +1,172 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "age": 28,
+    "email": "alice.johnson@example.com",
+    "address": {
+      "street": "123 Elm St",
+      "city": "Springfield",
+      "state": "IL",
+      "zip": "62704"
+    },
+    "employment": {
+      "position": "Software Developer",
+      "department": "Engineering",
+      "years": 3
+    }
+  },
+  {
+    "id": 2,
+    "name": "Bob Smith",
+    "age": 35,
+    "email": "bob.smith@example.com",
+    "address": {
+      "street": "456 Oak St",
+      "city": "Ridgewood",
+      "state": "NY",
+      "zip": "11385"
+    },
+    "employment": {
+      "position": "Project Manager",
+      "department": "Product",
+      "years": 5
+    }
+  },
+  {
+    "id": 3,
+    "name": "Carol White",
+    "age": 22,
+    "email": "carol.white@example.com",
+    "address": {
+      "street": "789 Pine St",
+      "city": "Fairview",
+      "state": "NJ",
+      "zip": "07022"
+    },
+    "employment": {
+      "position": "Marketing Coordinator",
+      "department": "Marketing",
+      "years": 2
+    }
+  },
+  {
+    "id": 4,
+    "name": "David Brown",
+    "age": 30,
+    "email": "david.brown@example.com",
+    "address": {
+      "street": "101 Maple Ave",
+      "city": "Clifton",
+      "state": "NJ",
+      "zip": "07013"
+    },
+    "employment": {
+      "position": "IT Support",
+      "department": "IT",
+      "years": 4
+    }
+  },
+  {
+    "id": 5,
+    "name": "Eva Martin",
+    "age": 25,
+    "email": "eva.martin@example.com",
+    "address": {
+      "street": "202 Birch Rd",
+      "city": "Naperville",
+      "state": "IL",
+      "zip": "60540"
+    },
+    "employment": {
+      "position": "Graphic Designer",
+      "department": "Design",
+      "years": 3
+    }
+  },
+  {
+    "id": 6,
+    "name": "Frank Clark",
+    "age": 27,
+    "email": "frank.clark@example.com",
+    "address": {
+      "street": "303 Cedar Ln",
+      "city": "Smalltown",
+      "state": "CO",
+      "zip": "80456"
+    },
+    "employment": {
+      "position": "Sales Representative",
+      "department": "Sales",
+      "years": 2
+    }
+  },
+  {
+    "id": 7,
+    "name": "Grace Lewis",
+    "age": 32,
+    "email": "grace.lewis@example.com",
+    "address": {
+      "street": "404 Spruce St",
+      "city": "Boulder",
+      "state": "CO",
+      "zip": "80302"
+    },
+    "employment": {
+      "position": "Human Resources Manager",
+      "department": "HR",
+      "years": 6
+    }
+  },
+  {
+    "id": 8,
+    "name": "Henry Walker",
+    "age": 29,
+    "email": "henry.walker@example.com",
+    "address": {
+      "street": "505 Willow Dr",
+      "city": "Greenville",
+      "state": "SC",
+      "zip": "29601"
+    },
+    "employment": {
+      "position": "Accountant",
+      "department": "Finance",
+      "years": 4
+    }
+  },
+  {
+    "id": 9,
+    "name": "Ivy Hall",
+    "age": 24,
+    "email": "ivy.hall@example.com",
+    "address": {
+      "street": "606 Elm Dr",
+      "city": "Somewhere",
+      "state": "TX",
+      "zip": "75001"
+    },
+    "employment": {
+      "position": "Customer Service Representative",
+      "department": "Support",
+      "years": 1
+    }
+  },
+  {
+    "id": 10,
+    "name": "Jack Lee",
+    "age": 31,
+    "email": "henry.walker@example.com",
+    "address": {
+      "street": "505 Willow Dr",
+      "city": "Greenville",
+      "state": "SC",
+      "zip": "29601"
+    },
+    "employment": {
+      "position": "Accountant",
+      "department": "Finance",
+      "years": 4
+    }
+  }
+]
