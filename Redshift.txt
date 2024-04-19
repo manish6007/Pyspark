@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >-
+  This template creates an Amazon Redshift cluster and stores its credentials
+  in AWS Secrets Manager.
+
+Resources:
+  RedshiftCluster:
+    Type: AWS::Redshift::Cluster
+    Properties:
+      ClusterType: single-node
+      DBName: ExampleDB
+      MasterUsername: hermes
+      MasterUserPassword: password
+      NodeType: dc2.large
+
+  RedshiftSecret:
+    Type: AWS::SecretsManager::Secret
+    Properties:
+      Name: RedshiftClusterCredentials
+      Description: "Credentials for Redshift database access"
+      SecretString: !Sub |
+        {
+          "username": "hermes",
+          "password": "password",
+          "host": {"Fn::GetAtt": ["RedshiftCluster", "Endpoint.Address"]},
+          "port": {"Fn::GetAtt": ["RedshiftCluster", "Endpoint.Port"]}
+        }
+      Tags:
+        - Key: "Name"
+          Value: "RedshiftClusterCredentials"
+
+Outputs:
+  RedshiftClusterEndpoint:
+    Description: "Endpoint of the Redshift Cluster"
+    Value: !GetAtt RedshiftCluster.Endpoint.Address
+  RedshiftClusterPort:
+    Description: "Port of the Redshift Cluster"
+    Value: !GetAtt RedshiftCluster.Endpoint.Port
+  SecretArn:
+    Description: "ARN of the Redshift credentials secret"
+    Value: !Ref RedshiftSecret
