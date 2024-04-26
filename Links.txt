@@ -1,0 +1,3 @@
+https://iolap.com/blog/setting-up-aws-redshift-data-sharing/
+https://repost.aws/knowledge-center/resize-redshift-cluster/
+https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html
