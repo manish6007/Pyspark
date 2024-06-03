@@ -1,23 +1,12 @@
-SELECT 
-    n.nspname AS schema_name,
-    c.relname AS table_name,
-    CASE 
-        WHEN t.ski_type = 1 THEN 'Interleaved'
-        ELSE 'Compound'
-    END AS sort_key_type
-FROM 
-    pg_class c
-JOIN 
-    pg_namespace n ON c.relnamespace = n.oid
-JOIN 
-    pg_table_def t ON c.oid = t.tableid
-WHERE 
-    t.sortkey > 0
-    AND t.ski_type = 1  -- Interleaved sort key type
-GROUP BY 
-    schema_name, table_name, sort_key_type
-ORDER BY 
-    schema_name, table_name;
+
+SELECT tablename, 
+       CASE WHEN sortkey = 0 THEN 'Not a sort key'
+            WHEN sortkey > 0 THEN 'Compound sort key (position: ' || sortkey || ')'
+            ELSE 'Interleaved sort key (position: ' || ABS(sortkey) || ')'
+       END AS sort_key_type
+FROM pg_table_def
+WHERE schemaname = '<schema_name>'
+  AND tablename NOT LIKE '%pg_%'; -- Exclude internal tables
 
 
 import sys
