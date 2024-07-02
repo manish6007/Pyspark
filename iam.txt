@@ -1,0 +1,39 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CloudFormation template to create an IAM Role allowing access to another AWS account
+
+Parameters:
+  TrustedAccountId:
+    Type: String
+    Description: The AWS Account ID of the trusted account that can assume this role
+
+Resources:
+  IAMRole:
+    Type: 'AWS::IAM::Role'
+    Properties: 
+      RoleName: CrossAccountAccessRole
+      AssumeRolePolicyDocument: 
+        Version: '2012-10-17'
+        Statement: 
+          - Effect: Allow
+            Principal: 
+              AWS: !Sub 'arn:aws:iam::${TrustedAccountId}:root'
+            Action: 'sts:AssumeRole'
+      Policies:
+        - PolicyName: CrossAccountAccessPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: 
+                  - 's3:ListBucket'
+                  - 's3:GetObject'
+                Resource: 
+                  - 'arn:aws:s3:::example-bucket'
+                  - 'arn:aws:s3:::example-bucket/*'
+
+Outputs:
+  RoleArn:
+    Description: The ARN of the IAM Role
+    Value: !GetAtt 
+      - IAMRole
+      - Arn
