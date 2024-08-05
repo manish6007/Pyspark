@@ -1,3 +1,40 @@
-https://iolap.com/blog/setting-up-aws-redshift-data-sharing/
-https://repost.aws/knowledge-center/resize-redshift-cluster/
-https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html
+import os
+import zipfile
+from datetime import datetime
+
+def unzip_cob_file(cobdate, base_dir='./data', file_initials='COB'):
+    # Convert cobdate to datetime object
+    date_obj = datetime.strptime(cobdate, '%Y%m%d')
+    
+    # Format the date for the filename
+    formatted_date = date_obj.strftime('%Y%m%d')
+    
+    # Construct the filename
+    filename = f"{file_initials}_{formatted_date}.zip"
+    
+    # Full path to the zip file
+    zip_path = os.path.join(base_dir, filename)
+    
+    # Check if the file exists
+    if not os.path.exists(zip_path):
+        raise FileNotFoundError(f"Zip file not found: {zip_path}")
+    
+    # Create an output directory based on the cobdate
+    output_dir = os.path.join(base_dir, formatted_date)
+    os.makedirs(output_dir, exist_ok=True)
+    
+    # Unzip the file
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        zip_ref.extractall(output_dir)
+    
+    print(f"File unzipped successfully to: {output_dir}")
+    return output_dir
+
+# Example usage
+try:
+    unzipped_dir = unzip_cob_file('20240805')
+    print(f"Files extracted to: {unzipped_dir}")
+except FileNotFoundError as e:
+    print(f"Error: {e}")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
